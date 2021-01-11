@@ -85,7 +85,15 @@ class RestaurantTest {
                 ()->restaurant.removeFromMenu("French fries"));
     }
 
-    
+    @Test
+    public void adding_items_from_the_menu_list_must_update_the_price(){
+        restaurant.addToMenu("Sweet corn soup",119);
+        restaurant.addToMenu("Vegetable lasagne", 269);
+        restaurant.addToMenu("Dosa", 100);
+        restaurant.checkPrice("Sweet corn soup","Vegetable lasagne");
+        //System.out.println( restaurant.checkPrice("Sweet corn soup","Vegetable lasagne"));
+        assertEquals(488,restaurant.checkPrice("Sweet corn soup","Vegetable lasagne","Dosa"));
+    }
 
     //<<<<<<<<<<<<<<<<<<<<<<<MENU>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
 }
