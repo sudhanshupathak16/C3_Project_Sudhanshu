@@ -80,4 +80,11 @@ public class Restaurant {
         return name;
     }
 
+
+    public int checkPrice(String... menu){
+      return 0;
+    }
+
+
+
 }
