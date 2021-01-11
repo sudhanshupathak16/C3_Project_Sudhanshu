@@ -82,9 +82,20 @@ public class Restaurant {
 
 
     public int checkPrice(String... menu){
-      return 0;
+        int sum = 0;
+        for (int i =0 ; i < menu.length; i++){
+            sum += findPriceByName(menu[i]);
+        }
+        return sum;
     }
 
+    private int findPriceByName(String itemName){
+        for(Item item: menu) {
+            if(item.getName().equals(itemName))
+                return item.getPrice();
+        }
+        return 0;
+    }
 
 
 }
